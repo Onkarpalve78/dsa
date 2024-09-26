@@ -25,6 +25,7 @@ class LinkedList():
                 # this will help us to get the last node by looping through the linked list till we get the last node which has next_node as None
 
             current_node.next_node = new_node
+        return new_node
 
     def display(self):
         current_node = self.head
