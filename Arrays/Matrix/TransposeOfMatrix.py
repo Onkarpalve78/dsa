@@ -13,8 +13,8 @@ for i in range(numberOfRows):
     matrix.append(rows)
 
 print(matrix)
-for i in matrix:
-    print(i)
+# for i in matrix:
+#     print(i)
 
 # for i in range(2):
 #     for j in range(len(matrix)):
@@ -30,5 +30,12 @@ for r in range(ROWS):
         result_matrix[r][c] = matrix[c][r]
 
 
-for i in result_matrix:
-    print(i)
+print(result_matrix)
+
+# striver's method: here we swap elements in place
+for i in range(ROWS):
+    for j in range(i):  # range is only till i cuz we dont want to swap everything ,
+        # only upper triangular with lower triangular, or else we would end up with original matrix
+        matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+print(matrix)

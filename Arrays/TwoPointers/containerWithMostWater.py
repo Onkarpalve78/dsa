@@ -23,14 +23,14 @@ maximum_area = 0
 i = 0
 j = len(height)-1
 
-while i < j and j > i:
+while i < j:
 
-    maximum = min(height[i], height[j]) * (j-i)
+    current_maximum = min(height[i], height[j]) * (j-i)
     if height[i] > height[j]:
         j -= 1
     else:
         i += 1
 
-    maximum_area = max(maximum, maximum_area)
+    maximum_area = max(current_maximum, maximum_area)
 
 print(maximum_area)

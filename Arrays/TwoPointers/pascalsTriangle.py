@@ -56,11 +56,13 @@ for count in range(numRows):
 
     # For rows with more than 1 element, calculate the middle elements
     if count > 0:
-        prev_row = pascal_arr[count - 1]
+        prev_row = pascal_arr[- 1]
 
         # Calculate the values in between the first and last element
-        for i in range(1, count):
+        for i in range(1, count):  # when count is 1, loop doesnt run, cuz range(1,1)
+            # has no in between range to iterate over, the amount of times range will run a loop depends on (right value)-(left value)
             sub_arr.append(prev_row[i - 1] + prev_row[i])
+            print("prev row: ", prev_row[i-1], prev_row[i], count)
 
         # Last element of each row is always 1
         sub_arr.append(1)
