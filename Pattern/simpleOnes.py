@@ -219,3 +219,45 @@ def pascalTriangle(n):
 
 
 pascalTriangle(n=8)
+
+
+def printEmptyDiamond(n):
+    # for i in range(n): use this and see diffrence
+    for i in range(n-1):
+        for _ in range(n-i):
+            print(" ", end=" ")
+
+        for j in range(i+1):
+            if j == 0:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+
+        for k in range(i):
+            if k == i-1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+
+        print()
+
+    for i in range(n):
+        for _ in range(i+1):
+            print(" ", end=" ")
+
+        for j in range(n-i-1):
+            if j == 0:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+
+        for k in range(n-i):
+            if k == n-i-1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+
+        print()
+
+
+printEmptyDiamond(n=8)
