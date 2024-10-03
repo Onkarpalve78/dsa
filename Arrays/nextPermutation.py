@@ -6,7 +6,8 @@ nums = list(map(int, input().split()))
 def nextPermutation(nums: list[int]) -> list[int]:
     length = len(nums)
     if length == 2:
-        return nums.reverse()
+        nums.reverse()
+        return nums
 
     pointer = length-2
 
@@ -14,7 +15,8 @@ def nextPermutation(nums: list[int]) -> list[int]:
         pointer -= 1
 
     if pointer == -1:
-        return nums.reverse()
+        nums.reverse()
+        return nums
     # Now I want to find out which number is smallest in nums[pointer:],
     # although I know the last element will always be the smallest in it num[-1],
     # but it is not guaranteed if the last element which is smallest
