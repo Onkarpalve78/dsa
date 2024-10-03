@@ -4,7 +4,7 @@ nums = list(map(int, input().split()))
 
 
 def insertPivotToMiddle(arr, low, high):
-
+    print(f"low:{low}, high {high} , arr: {arr}")
     pivot = arr[low]
     i = low
     j = high
@@ -21,7 +21,7 @@ def insertPivotToMiddle(arr, low, high):
             arr[i], arr[j] = arr[j], arr[i]
 
         arr[low], arr[j] = arr[j], arr[low]
-
+        print(f"arr:{arr} ,given j: ", j)
         return j
 
 
