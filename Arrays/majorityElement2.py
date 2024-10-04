@@ -3,6 +3,23 @@
 numss = [1, 1, 1, 1, 2, 2, 3, 2, 2]
 
 
+def majorityElementsBrute(nums: list[int]) -> int:
+    min_amount = len(nums)//3
+    counter = {}
+    ans = []
+    for i, num in enumerate(nums):
+
+        if counter.get(num, None):
+            counter[num] += 1
+        else:
+            counter[num] = 1
+
+    for key, value in counter.items():
+        if value > min_amount:
+            ans.append(key)
+    return ans
+
+
 def majorityElements(nums: list[int]) -> list[int]:
     if len(nums) < 1:
         return []
@@ -25,4 +42,5 @@ def majorityElements(nums: list[int]) -> list[int]:
     return [x for x in (candidate1, candidate2) if nums.count(x) > len(nums)//3]
 
 
-print(majorityElements(numss))
+print("brute", majorityElementsBrute(numss))
+print("optimal", majorityElements(numss))

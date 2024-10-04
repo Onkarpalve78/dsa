@@ -31,7 +31,7 @@ def subsetsWithDup(nums: List[int]) -> List[List[int]]:
         returnAllSubsets(index+1, ans_arr, arr, n, finalAns)
     returnAllSubsets(index, ans_arr, nums, n, finalAns)
 
-    finalAns = set((tuple(ans) for ans in finalAns))
+    finalAns = set([tuple(ans) for ans in finalAns])
     finalAns = [list(ans) for ans in finalAns]
 
     return sorted(finalAns)

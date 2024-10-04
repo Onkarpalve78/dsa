@@ -35,3 +35,26 @@ def findCycleNode(LList: LinkedList):
 
 
 print(findCycleNode(linkedList))
+
+
+def findCycleNodeMyCode(LList: LinkedList):
+    slow: Node = LList.head
+    fast: Node = LList.head
+    entry: Node = LList.head
+    isCycle = False
+    while fast and fast.next_node:
+        slow = slow.next_node
+        fast = fast.next_node.next_node
+        if slow == fast:
+            isCycle = True
+            break
+
+    while slow != entry and isCycle:
+        slow = slow.next_node
+        entry = entry.next_node
+        return entry.data
+
+    return None
+
+
+print(findCycleNodeMyCode(linkedList))

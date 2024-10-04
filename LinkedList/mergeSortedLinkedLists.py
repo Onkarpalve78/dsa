@@ -27,8 +27,8 @@ class LinkedList():
 
 
 def mergeTwoLL(List1: LinkedList, List2: LinkedList):
-    mergedList = LinkedList()
-    current = mergedList
+    mergedListHead = Node(0)
+    current = mergedListHead
     list1 = List1.head
     list2 = List2.head
 
@@ -45,7 +45,7 @@ def mergeTwoLL(List1: LinkedList, List2: LinkedList):
 
     current = list1 if list1 else list2
 
-    return current.data
+    return mergedListHead.next.data
 
 
 linkedList1 = LinkedList()

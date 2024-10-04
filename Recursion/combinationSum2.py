@@ -24,7 +24,7 @@ def combinationSum2(index: int, ans_arr: list, arr: list, n: int, target: int, f
 def findCombinations(collection: list):
     collection.sort()
     ans_arr = []
-    target = 8
+    target = 9
     n = len(collection)
     final_ans = []
 

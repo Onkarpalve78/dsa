@@ -37,4 +37,4 @@ def printThreesomes(arr: list):
     print(final_ans)
 
 
-printThreesomes([-1, 6, 8, 9])
+printThreesomes([-1, 6, 8, 9, -8, 1, 0])

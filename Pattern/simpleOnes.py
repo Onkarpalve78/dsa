@@ -261,3 +261,22 @@ def printEmptyDiamond(n):
 
 
 printEmptyDiamond(n=8)
+
+
+def printRhombus(n):
+
+    for i in range(n):
+
+        for _ in range(n-i):
+            print(" ", end=" ")
+
+        for _ in range(i):
+            print("*", end=" ")
+
+        for _ in range(n-i):
+            print("*", end=" ")
+
+        print()
+
+
+printRhombus(n=8)

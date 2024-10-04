@@ -41,3 +41,29 @@ def longestSubArray(nums, k):
 
 # Test the function with the input numbers and target sum 'k'
 print(longestSubArray(nums, k))
+
+
+def longestSubArrayMyCode(nums: list[int], k: int) -> int:
+    presum = {}
+    max_len = 0
+    current_sum = 0
+    for i, num in enumerate(nums):
+        current_sum += num
+        presum[current_sum] = i
+
+    for key, value in presum.items():
+        if key == k:
+            curr = nums[:value+1]
+            max_len = max(max_len, len(curr))
+
+        if key > k:
+            remaining = key-k
+            if remaining in presum:
+                ans = presum[remaining]
+                curr = nums[ans:value+1]
+                max_len = max(max_len, len(curr))
+
+    return max_len
+
+
+print(longestSubArrayMyCode(nums, k))
