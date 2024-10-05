@@ -79,18 +79,48 @@ class BinaryTree():
 
         return 1+max(left_height, right_height), max(left_diameter, right_diameter, current_diameter)
 
+    #  the height difference between left and right subtrees is at most 1 for every node
+    def isBtreeBalanced(self, root):
+        if root is None:
+            return 0, True
+
+        lh, l_balanced = self.isBtreeBalanced(root.left)
+        rh, r_balanced = self.isBtreeBalanced(root.right)
+
+        balanced = abs(lh-rh) <= 1
+
+        return 1+max(lh, rh), balanced and l_balanced and r_balanced
+
+    def lowestCommonAncestor(self, root, p, q):
+        if not root or root == p or root == q:
+            return root
+
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+
+        if left and right:
+            return root
+        print(f"Visiting Node {root.value if root else 'None'}, returning {root.value if (left and right) else (left.value if left else (right.value if right else 'None'))}")
+
+        return left if left else right
+
 
 tree = BinaryTree(1)
+
 tree.root.left = Node(2)
 tree.root.right = Node(3)
 
 tree.root.left.left = Node(4)
 tree.root.left.right = Node(5)
-inorder = []
+
+tree.root.left.left.left = Node(6)
+tree.root.left.right.left = Node(7)
+
 preorder = []
 tree.preOrderTraversal(tree.root, preorder)
 print(preorder)
 
+inorder = []
 tree.inOrderTraversal(tree.root, inorder)
 print(inorder)
 
@@ -109,6 +139,14 @@ print(h)
 
 diameter = tree.diameterOfBtree(tree.root)
 print(diameter[1])
+
+balanced = tree.isBtreeBalanced(tree.root)
+print(balanced[1])
+
+lnode = 2
+rnode = 3
+lca = tree.lowestCommonAncestor(tree.root, lnode, rnode)
+print(lca)
 
 # The structure of the tree is:
 #       1
