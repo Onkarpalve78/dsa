@@ -13,4 +13,4 @@ def largestOddNumber(num: str) -> str:
     return ""
 
 
-print(largestOddNumber(num="52"))
+print(largestOddNumber(num="5287"))

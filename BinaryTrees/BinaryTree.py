@@ -100,7 +100,7 @@ class BinaryTree():
 
         if left and right:
             return root
-        print(f"Visiting Node {root.value if root else 'None'}, returning {root.value if (left and right) else (left.value if left else (right.value if right else 'None'))}")
+        # print(f"Visiting Node {root.value if root else 'None'}, returning {root.value if (left and right) else (left.value if left else (right.value if right else 'None'))}")
 
         return left if left else right
 

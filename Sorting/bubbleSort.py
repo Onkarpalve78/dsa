@@ -27,7 +27,7 @@ def bubbleSort(nums):
     # Outer loop to reduce the range of comparison after every pass
     # Since we know the largest element will be shifted to the rightmost end,
     # no need to iterate till that point, they are where they belong
-    for i in range(length, -1, -1):
+    for i in range(length-1, -1, -1):
         # Inner loop to compare adjacent elements
         for j in range(i-1):
             if nums[j] > nums[j+1]:

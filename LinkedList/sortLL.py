@@ -56,11 +56,11 @@ def linkedListToList(head):
 # Example usage
 if __name__ == "__main__":
     # Create a sample linked list: 1 -> 4 -> 3 -> 2 -> 5 -> 2
-    values = [1, 4, 3, 2, 5, 2]
+    values = [1, 4, 3, 2, 5, 2, 6, 7, 9, 10]
     head = createLinkedList(values)
 
     # Partition the list with x = 3
-    partitioned = partitionList(head, 4)
+    partitioned = partitionList(head, 7)
 
     # Print the result
     print(linkedListToList(partitioned))
