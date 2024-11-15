@@ -45,9 +45,12 @@ def verticelOrderTraversal(root):
     ans = []
 
     for kev, y_val in sorted(nodes.items()):
+        # this is to sort verticle levels from -2,-1,0,1,2
         col = []
         for x_key, x_val in sorted(y_val.items()):
+            # this is to sort the horizontal levels 0,1,2,3
             col.extend(sorted(x_val))
+            # this is to sort the values in the horizontal levels
 
         ans.append(col)
 
