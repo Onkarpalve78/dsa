@@ -55,3 +55,11 @@ def multiplyStrings(num1: str, num2: str) -> str:
 
 
 print(multiplyStrings("58", "64"))
+
+
+# this works and it doesnt really breal any rules but kinda cheating tho :P
+def multiplyStrings2(num1: str, num2: str) -> str:
+    return eval(f"{num1}*{num2}")
+
+
+print(multiplyStrings2("58", "10"))

@@ -1,0 +1,1 @@
+current_node.next = new_node
