@@ -43,7 +43,6 @@ class DLLArr(DoublyLinkedList):
 
         count = 1
         while current_node.next is not None and count != k:
-            print(current_node.val)
             count += 1
             current_node = current_node.next
 
