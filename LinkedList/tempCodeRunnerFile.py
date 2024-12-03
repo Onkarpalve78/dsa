@@ -1,3 +1,5 @@
-linkedList2.append(5)
-# linkedList2.append(4)
-# linkedList2.append(8)
+
+L1.append(3)
+L1.append(2)
+L1.append(4)
+L1.append(3)

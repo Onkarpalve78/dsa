@@ -1,0 +1,1 @@
+ or nums[current] == 0
