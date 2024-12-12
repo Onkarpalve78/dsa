@@ -1,0 +1,1 @@
+nums[m] != nums[m-1]
