@@ -1,2 +1,1 @@
- else:
-            return True
+not right_node
