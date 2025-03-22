@@ -14,7 +14,7 @@ for i in range(len(nums)-k, len(nums)):
 
 print("Before==>", nums)
 
-print(nums[:-k])  # this is to remove the last k elements from the array but since this is a slice operation, it doesn't modify the original array rather it returns a new array with the last k elements removed
+# print(nums[:-k])  # this is to remove the last k elements from the array but since this is a slice operation, it doesn't modify the original array rather it returns a new array with the last k elements removed
 
 for i in range(k):
     nums.pop()

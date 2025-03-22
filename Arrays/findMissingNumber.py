@@ -18,16 +18,16 @@ nums = list(map(int, input().split()))
 
 # print(ans)
 
-# def missingNumbers(nums: list[int]) -> int:
-#     xor1, xor2 = 0, 0
-#     nums.sort()
-#     n = nums[-1]+1
-#     for i in range(n):
-#         xor1 ^= i
-#     for i in range(len(nums)):
-#         xor2 ^= nums[i]
+def missingNumbersXor(nums: list[int]) -> int:
+    xor1, xor2 = 0, 0
+    nums.sort()
+    n = nums[-1]+1  # +1 because index starts from 0
+    for i in range(n):
+        xor1 ^= i
+    for i in range(len(nums)):
+        xor2 ^= nums[i]
 
-#     return xor1 ^ xor2
+    return xor1 ^ xor2
 
 
 # print(missingNumbers(nums))

@@ -21,9 +21,20 @@ frequency = {}
 #     else:
 #         frequency[char] = 1
 
-for char in input_str:
-    # get() check for a element and gets back its value if exist, the second arg is the default value if char doesnt exists
-    frequency[char] = frequency.get(char, 0) + 1
+# for char in input_str:
+#     # get() check for a element and gets back its value if exist, the second arg is the default value if char doesnt exists
+#     frequency[char] = frequency.get(char, 0) + 1
 
 
 print(frequency)
+
+
+def frequencyOfChar(str: str):
+    frequency = {}
+    for char in str:
+        frequency[char] = frequency.get(char, 0)+1
+
+    return frequency
+
+
+print('new', frequencyOfChar(input_str))

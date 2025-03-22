@@ -1,1 +1,3 @@
- or nums[current] == 0
+
+# for i in range(k):
+#     nums.pop()
