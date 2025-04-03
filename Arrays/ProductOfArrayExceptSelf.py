@@ -1,6 +1,7 @@
 # LC 238
 
 nums = [1, 2, 3, 4]
+nums = [-1, 1, 0, -3, 3]
 ans = []
 
 for num in nums:

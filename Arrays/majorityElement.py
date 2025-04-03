@@ -19,3 +19,10 @@ def majorityElement(nums: List[int]) -> int:
 
 
 print(majorityElement(nums))
+
+# 30-03-2025
+
+
+def majorityElement(nums: List[int]) -> int:
+    nums.sort()
+    return nums[len(nums)//2]

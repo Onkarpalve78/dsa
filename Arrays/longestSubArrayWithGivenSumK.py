@@ -1,3 +1,4 @@
+# Q] Find longest subarray with give sum k
 # Read a list of integers from input
 nums = list(map(int, input().split()))
 # Read the target sum 'k' from input
@@ -41,6 +42,18 @@ def longestSubArray(nums, k):
 
 # Test the function with the input numbers and target sum 'k'
 print(longestSubArray(nums, k))
+# Explaination:
+# Suppose nums = [1, 2, 3, 2, 5] and k = 5.
+
+# At i = 3 (value = 2), current_sum = 8.
+# remaining = current_sum - k = 8 - 5 = 3.
+# If preSum[3] = 1 (prefix sum 3 was seen at index 1), then:
+# The subarray [3, 2] (from index 2 to 3) has a sum of 5.
+# Its length is i - preSum[remaining] = 3 - 1 = 2.
+# This logic ensures that the algorithm efficiently finds the longest subarray with the given sum k.4. Updating max_len:
+
+# max_len keeps track of the maximum length of any subarray found so far that sums to k.
+# If the current subarray (of length i - preSum[remaining]) is longer than max_len, it updates max_len.
 
 
 def longestSubArrayMyCode(nums: list[int], k: int) -> int:

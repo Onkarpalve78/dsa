@@ -14,3 +14,15 @@ for item in common:
         ans.append(item)
 
 print(ans)
+
+
+# region bitwise &
+def intersection(nums: list) -> list[int]:
+    res = set(nums[0])
+    for i in range(1, len(nums)):
+        res &= set(nums[i])
+
+    return list(res)
+
+
+print(intersection(nums))

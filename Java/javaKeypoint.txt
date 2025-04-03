@@ -1,0 +1,138 @@
+
+Function cannot be nested in java
+example:
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        public void nestedFunction() { // This will cause a compilation error
+            System.out.println("This is a nested function.");
+        }
+    }
+}
+instead, define the function outside of the main method.
+    
+    public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        nestedFunction(); // Call the nested function
+    }
+    public void nestedFunction() { // This is now outside the main method
+            System.out.println("This is a nested function.");
+        }
+}
+// 1. Array Declaration and Initialization
+int[] arr = new int[5]; // Declaration
+int[] arr = {1, 2, 3, 4, 5}; // Initialization
+int[] arr = new int[]{1, 2, 3, 4, 5}; // Declaration and Initialization
+int[] arr = new int[5]; // Declaration and Initialization
+
+// 2. Array Length
+int length = arr.length; // Length of the array
+// 3. Accessing Array Elements
+int firstElement = arr[0]; // Accessing the first element
+int lastElement = arr[arr.length - 1]; // Accessing the last element
+// 4. Looping through Arrays
+for (int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]); // Print each element
+}
+for (int element : arr) {
+    System.out.println(element); // Enhanced for loop
+}
+// 5. Multidimensional Arrays
+int[][] multiArr = new int[3][4]; // 2D array declaration
+int[][] multiArr = {{1, 2, 3}, {4, 5, 6}}; // 2D array initialization
+int firstElement = multiArr[0][0]; // Accessing the first element of the first row
+
+java.util.Arrays and java.util.ArrayList are not the same in Java
+
+Arrays can hold primitive types (int, char, etc.) and objects, while ArrayLists can only hold objects.
+java.util.Arrays is a utility class that provides methods for manipulating arrays (sorting, searching, etc.),
+java.util.Arrays methods are static and can be called without creating an instance of the class.
+java.util.Arrays methods:
+- sort(array): Sorts the specified array into ascending numerical order.
+- binarySearch(array, key): Searches the specified array for the specified value using the binary search algorithm.
+- copyOf(original, newLength): Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.
+- fill(array, value): Assigns the specified value to each element of the specified array.
+- equals(array1, array2): Returns true if the two specified arrays are equal to one another.
+- toString(array): Returns a string representation of the contents of the specified array.
+### Array slicing:
+       // Get a slice from index 1 to 4 (excluding 4)
+        int[] slice = Arrays.copyOfRange(arr, 1, 4);
+
+java.util.ArrayList methods:
+- add(element): Appends the specified element to the end of this list.
+- remove(index): Removes the element at the specified position in this list.
+- get(index): Returns the element at the specified position in this list.
+- set(index, element): Replaces the element at the specified position in this list with the specified element.
+- size(): Returns the number of elements in this list.
+- clear(): Removes all elements from this list. 
+- contains(element): Returns true if this list contains the specified element.
+- isEmpty(): Returns true if this list contains no elements.
+- indexOf(element): Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.
+- lastIndexOf(element): Returns the index of the last occurrence of the specified element in this list, or -1 if this list does not contain the element.
+- toArray(): Returns an array containing all of the elements in this list in proper sequence (from first to last element).
+
+// 6. Array vs ArrayList
+
+
+while java.util.ArrayList is a resizable array implementation of the List interface.
+
+Arrays are fixed in size, while ArrayLists are dynamic and can grow or shrink as needed.
+Arrays are of a specific type, while ArrayLists can hold objects of any type (using generics).
+
+
+IMPORTANT:
+
+### Array slicing:
+       // Get a slice from index 1 to 4 (excluding 4)
+        int[] slice = Arrays.copyOfRange(arr, 1, 4);
+
+### String slicing:
+        String str = "Hello, World!";
+        String slice = str.substring(1, 4); // "ell"
+        String slice = str.substring(str.length() - 5); // "orld!"
+
+### Get Ascii value of a character:
+        char ch = 'A';
+        int asciiValue = ch; // 65
+        
+### Get character from Ascii value:
+        int asciiValue = 65;
+        char ch = (char) asciiValue; // 'A'
+        
+       
+### Get the last character of a string:
+        String str = "Hello, World!";
+        char lastChar = str.charAt(str.length() - 1); // '!'
+
+### filtering an array:
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] filteredArr = Arrays.stream(arr).filter(x -> x > 2).toArray(); // {3, 4, 5}
+        int[] filteredArr = Arrays.stream(arr).filter(x -> x % 2 == 0).toArray(); // {2, 4}
+    
+### HashMap:
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("key1", 1); // Add key-value pair
+        map.put("key2", 2); // Add key-value pair
+        int value = map.get("key1"); // Get value by key
+        boolean containsKey = map.containsKey("key1"); // Check if key exists
+        boolean containsValue = map.containsValue(1); // Check if value exists
+        map.remove("key1"); // Remove key-value pair by key
+        int size = map.size(); // Get size of the map
+        map.clear(); // Clear the map
+        map.values(); // Get all values in the map
+        map.keySet(); // Get all keys in the map
+        map.entrySet(); // Get all key-value pairs in the map
+        map.putIfAbsent("key3", 3); // Add key-value pair if key is not present
+
+### HashSet:
+        HashSet<String> set = new HashSet<>();
+        set.add("value1"); // Add value
+        set.add("value2"); // Add value
+        boolean containsValue = set.contains("value1"); // Check if value exists
+        set.remove("value1"); // Remove value
+        int size = set.size(); // Get size of the set
+        set.clear(); // Clear the set
+        set.isEmpty(); // Check if the set is empty
+        set.iterator(); // Get iterator for the set
+        set.forEach(System.out::println); // Print all values in the set
